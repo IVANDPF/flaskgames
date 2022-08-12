@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+{% block titulo %}
+Editar Juego
+{% endblock %}
+{% block contenido %}
+<section class="section">
+    <div class="cloumns">
+        <div class="clumn">
+            <h3>Editar juego</h3>
+            <form action="{{url_for('actualizar_juego')}}" method="post">
+                <input type="hidden" name="id" value="{{juego[0]}}">
+
+                <label for="nombre">Nombre:</label>
+                <input value="{{juego[1]}}" required type="text" class="input" placeholder="Editar Nombre" name="nombre" id="nombre">
+
+                <label for="descripcion">Descripción</label>
+                <input value="{{juego[2]}}" required type="text" class="input" placeholder="Editar Descripcion" name="descripcion" id="descripcion">
+
+                <label for="precio">Precio</label>
+                <input value="{{juego[3]}}" required type="number" class="input" placeholder="Editar Precio" name="precio" id="precio">
+
+                <button type="submit" class="button">Guardar y Actualizar</button>
+                <a href="{{url_for('juegos')}}" class="button">Volver</a>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock%}
+

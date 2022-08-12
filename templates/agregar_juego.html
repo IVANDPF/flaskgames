@@ -1,0 +1,26 @@
+{% extends "index.html"%}
+{% block titulo %}
+Agregar Juego
+{% endblock %}
+{% block contenido %}
+<section class="section">
+    <div class="columns">
+        <div class="column is-one-third">
+            <h3>Agregar Juego</h3>
+            <form action="{{url_for('guardar_juego')}}" method="post">
+                <label for="nombre">Nombre:</label>
+                <input required type="text" class="input" placeholder="Insertar el nombre del juego" name="nombre" id="nombre">
+
+                <label for="description">Descripción</label>
+                <input required type="text" class="input" placeholder="Insertar la descripcion del juego" name="descripcion" id="descripcion">
+
+                <label for="precio">Precio</label>
+                <input required type="number" class="input" placeholder="Insertar el precio del juego" name="precio" id="precio">
+                <button type="submit" class="button is-success mt-2">Guardar y actualizar</button>
+                <a href="{{url_for('juegos')}}" class="button">Volver</a>
+            </form>
+        </div>
+
+    </div>
+</section>
+{% endblock%}
